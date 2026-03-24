@@ -16,6 +16,31 @@ table {
   min-width: max-content;
 }
 
+th, td {
+  border: 1px solid #ccc;
+}
+
+/* 1行目固定 */
+tr:first-child th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 3;
+}
+
+/* 1列目固定 */
+td:first-child, th:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+}
+
+/* 左上（1行1列）は最前面 */
+tr:first-child th:first-child {
+  z-index: 4;
+}
+
 /* セル */
 td {
   border: 1px solid #333;
